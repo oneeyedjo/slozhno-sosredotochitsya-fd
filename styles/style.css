@@ -2,4 +2,264 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-dark);
+  background-position: center;
+  background-size: cover; 
+  background-attachment: fixed;
+}
+
+.header {
+  height: 100vh;
+  min-height:668px;
+  padding: 10px; /* поменял с padding */
+}
+
+.header__theme-menu {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  justify-items: end;
+  height: 100%;
+}
+
+.dec-element {
+  position: absolute;
+  display: grid; 
+  grid-template-columns: auto auto;
+  align-self: start;
+  color: var( --dec-element-color);
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  font-family: "IBM Plex mono", sans-serif;
+}
+
+.header__theme-menu-list {
+  display: grid;  
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "IBM Plex mono", sans-serif;
+  color: var(--theme-switch-color);
+  text-transform: lowercase;
+}
+
+.header__theme-menu-item:hover {
+  outline: 1px solid var(--button-hover-focus);
+  padding: 1.5 13px;
+}
+
+.header__theme-menu-item:focus-visible {
+  border-bottom: 1px solid var(--button-hover-focus);
+}
+
+.dec-element::after {
+  content: '';
+  height: 9px;
+  width: 9px;
+  margin: 8px 10px;
+  border-radius: 50%;
+  background-color: var( --dec-element-color);
+  box-shadow: 0 0 4px 2px var( --dec-element-color);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  color: var( --dec-element-color);
+  top: 10px;
+  right: 10px; 
+  border-top: 1px solid var( --dec-element-color);
+  border-right: 1px solid var( --dec-element-color);
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  color: var( --dec-element-color);
+  left: 10px;
+  bottom: 10px; 
+  border-bottom: 1px solid var( --dec-element-color);
+  border-left: 1px solid var( --dec-element-color);
+}
+
+.main_title {
+  font-family: "IBM Plex mono", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 83%;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--header-name-color);
+  justify-self: start;
+}
+
+.header_title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header_description {
+  font-family: "IBM Plex mono", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--color-text-description);
+  background-color: var(--bg-color-description-text);
+  inline-size: 100%;
+}
+
+/* основное первая секция  */
+
+.main {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.card-title {
+  font-family: "IBM Plex mono", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  font-style: bold;
+  color: var( --color-name-section);
+  margin-top: 50px;
+}
+
+.heading-text {
+  font-family: "IBM Plex mono", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  font-style: bold;
+  color: var(--color-heading-text);
+  background-color: var(--bg-color-description-text);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-family: "IBM Plex mono", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--color-text);
+}
+
+/* вторая секция  */
+
+/* .what-is .card-tittle {
+  margin-top: 50px;
+} */
+
+/* заголовки советов третьей секции */
+
+.tip-titles {
+  font-family: "IBM Plex mono", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  background-color: var(--bg-color-description-text);
+  color: var(--color-heading-text);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* секция с картинками  */
+
+/* .section-image .heading-text {
+  margin-top: 50px;
+} */
+
+.image {
+  inline-size: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* подвал */
+
+.footer {
+  height: 100vh;
+  min-height: 668px;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  position: relative;
+}
+
+.footer_title {
+  text-shadow: 2px 2px 0  var(--accent-color);
+}
+/* стилизация для ссылки */
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.link-unique:hover {
+  border-bottom: 1px solid var( --color-link-hover-focus);
+}
+
+.link-unique:focus {
+  border: 1px solid var( --color-link-hover-focus);
+}
+
+/* медиа запросы  */
+
+@media (width >= 768px) {
+
+  .header_description {
+    inline-size: 58%;
+  }
+
+ /*  первая секция */
+
+  .why-is {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+.card-title {
+  margin-top: 80px;
+}
+
+.text-why .heading-text:first-child {
+  margin-top: 80px;
+}
+
+.text-why {
+  grid-column: 2 / 4;
+}
+
+ /*третья секция  */
+
+/* .how-is {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.heading-text {
+  grid-column: 2 / 4;
+  margin-top: 80px;
+  max-height: 23px;
+}
+
+.how-text {
+  grid-column: 2 / 4;
+} */
+
 }

@@ -2,3 +2,18 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+:root {
+  --bg-dark: url("../images/cover-image-dark.png");
+  --accent-color: #FF0070;
+  --dec-element-color: #FF0070;
+  --header-name-color: #DB00FF;
+  --theme-switch-color: #FF0070;
+  --button-hover-focus: #FF0070; 
+  --color-text-description: #000028;
+  --bg-color-description-text: #FF0070;
+  --color-name-section: #FF0070;
+  --color-heading-text: #000028;
+  --color-text: #F1B2CE;
+  --color-link-hover-focus: #F1B2CE;
+}
