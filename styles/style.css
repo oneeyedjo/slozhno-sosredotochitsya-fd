@@ -9,24 +9,24 @@
 }
 
 .header {
-  height: 100vh;
-  min-height: 668px;
-  padding: 10px;
-}
-
-.header__theme-menu {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
   justify-items: end;
-  height: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  height: 100vh;
+  min-height: 668px;
 }
 
 .dec-element {
   position: absolute;
   display: grid;
   grid-template-columns: auto auto;
-  align-self: start;
+  top: 12px;
+  right: 9px;
   color: var(--dec-element-color);
   text-transform: uppercase;
   font-size: 18px;
@@ -36,8 +36,10 @@
 }
 
 .header__theme-menu-list {
-  display: grid;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
 }
 
 .header__theme-menu-button {
@@ -46,21 +48,22 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
+  font-style: normal;
   font-family: "IBM Plex mono", sans-serif;
   color: var(--theme-switch-color);
   text-transform: lowercase;
+  padding: 1.5px 13px 4px 13px;
 }
 
-.header__theme-menu-item:hover {
+.header__theme-menu-button:hover {
   outline: 1px solid var(--button-hover-focus);
-  padding: 1.5 13px;
 }
 
-.header__theme-menu-item:focus {
+.header__theme-menu-button:focus {
   outline: none;
 }
 
-.header__theme-menu-item:focus-visible {
+.header__theme-menu-button:focus-visible {
   border-bottom: 1px solid var(--button-hover-focus);
 }
 
@@ -105,7 +108,6 @@
   line-height: 83%;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   color: var(--header-name-color);
-  justify-self: start;
 }
 
 .header_title {
@@ -124,9 +126,14 @@
 
 /* основное первая секция  */
 
-.why-is {
+.section {
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 50px;
+}
+
+.main .section:nth-child(1) {
+  margin-top: 40px;
 }
 
 .card-title {
@@ -136,7 +143,6 @@
   line-height: 23.4px;
   font-style: bold;
   color: var(--color-name-section);
-  margin-top: 50px;
 }
 
 .heading-text {
@@ -161,17 +167,7 @@
 
 /* вторая секция  */
 
-.what-is {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 /* заголовки советов третьей секции */
-
-.how-is {
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
 .tip-titles {
   font-family: "IBM Plex mono", sans-serif;
@@ -186,15 +182,19 @@
 
 /* секция с картинками  */
 
+.section-image .heading-text {
+  margin-bottom: 0;
+}
+
 .section-image {
-  margin-left: 10px;
-  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 10px;
 }
 
 .image {
   inline-size: 100%;
-  margin-bottom: 5px;
-  margin-top: 5px;
 }
 
 /* подвал */
@@ -206,6 +206,7 @@
   display: grid;
   align-items: center;
   position: relative;
+  margin-top: 40px;
 }
 
 .footer_title {
@@ -218,19 +219,32 @@
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
-.link-unique:hover {
+.link:hover {
   border-bottom: 1px solid var(--color-link-hover-focus);
 }
 
-.link-unique:focus {
+.link:focus {
+  border: none;
+}
+
+.link:focus-visible {
   border: 1px solid var(--color-link-hover-focus);
 }
 
 /* медиа запросы  */
 
 @media (width >= 768px) {
+  .dec-element {
+    top: 20px;
+    right: 18px;
+  }
+
   .header {
-    padding: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 0;
+    padding-left: 0;
+    min-height: 100vh;
   }
 
   .decorated-zone::after {
@@ -244,56 +258,67 @@
   }
 
   .main_title {
+    justify-self: start;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .header_description {
     width: 364px;
-    height: 117px;
   }
 
   /*  первая секция */
 
-  .why-is {
+  .section {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
     margin-left: 20px;
     margin-right: 20px;
+    /* padding-top: 20px; */
   }
 
-  .card-title {
-    margin-top: 80px;
+  .main .section:nth-child(1) {
+  margin-top: 60px;
   }
 
-  .text-why .heading-text:first-child {
-    margin-top: 80px;
+  .section_text article:first-child .heading-text {
+    margin-top: 0;
   }
 
-  .text-why {
+  .section_text article:last-child .heading-text {
+    margin-top: 20px;
+  }
+
+  .section_text {
     grid-column: 2 / 4;
   }
 
   /* вторая секция */
 
-  /*третья секция  */
-
-  .how-is {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 20px;
-    margin-right: 20px;
+  .main .section:nth-child(2) .card-title {
+    width: 236px;
   }
 
-  .how-text {
-    grid-column: 2 / 4;
-  }
-  .how-text .heading-text:first-child {
+  .main .section:nth-child(2) {
+    display: block;
     margin-top: 80px;
   }
 
+  /*третья секция  */
+
+  .main .section:nth-child(3) {
+    margin-top: 80px;
+  }
+  
+  .section_text > .heading-text {
+    margin-top: 0;
+  }
+
   /* секция с картинками  */
+
+  .main .section:nth-child(4) {
+    margin-top: 105px;
+  }
 
   .section-image {
     display: grid;
@@ -305,8 +330,7 @@
 
   .section-image .heading-text {
     grid-column: 1 / 4;
-    margin-top: 80px;
-    margin-bottom: 0;
+    margin-bottom: -5px;
   }
 
   .image {
@@ -339,23 +363,33 @@
   /* подвал */
 
   .footer {
-    margin-top: 80px;
+    margin-top: 60px;
   }
 }
 
 @media (width >= 1024px) {
-  .header {
-    padding: 20px;
-  }
 
-   .main_title {
+  .main_title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .header__theme-menu-list {
+    .card-title {
+    min-width: 315px;
+  }
+
+    .header__theme-menu {
+    width: 100%;
     display: flex;
-    align-self: start;
-    justify-self: center;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  .header__theme-menu-list {
+    padding: 0;
+    flex-direction: row;
+    padding-left: 20px;
+    gap: 10px;
   }
 
   .decorated-zone::after {
@@ -369,7 +403,6 @@
   }
 
   .header_description {
-    height: 71px;
     width: 491px;
   }
 
@@ -381,4 +414,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
+
+  .section-image > .heading-text {
+    margin-top: 0;
+  }
+
+  .main .section:nth-child(4) {
+    margin-top: 80px;
+  }
 }
+
+/* знаю мой код просто ужас :), простите */
