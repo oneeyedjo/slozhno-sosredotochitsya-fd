@@ -10,6 +10,7 @@
   --dec-element-color: transparent;
   --dec-corner: #353430;
   --header-name-color: #ffc2e6;
+  --button-hover: rgba(50, 49, 45, 0.4);
   --theme-switch-color: #353430;
   --button-hover-focus: #353430;
   --color-text-description: #353430;
@@ -27,6 +28,7 @@
     --dec-element-color: transparent;
     --dec-corner: #353430;
     --header-name-color: #ffc2e6;
+    --button-hover: rgba(50, 49, 45, 0.4);
     --theme-switch-color: #353430;
     --button-hover-focus: #353430;
     --color-text-description: #353430;
